@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hyrule Search | Buscador Zelda</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/styles.css">
+  <script type="module" src="./js/ui.js" defer></script>
+</head>
+
+<body class="pagina">
+  <span class="pagina__fondo"></span>
+
+  <header class="cabecera cabecera--pequena">
+    <nav class="navegacion">
+      <a class="navegacion__marca" href="index.html">Buscador de Hyrule</a>
+
+      <ul class="navegacion__lista">
+        <li><a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Buscador</a></li>
+        <li><a class="navegacion__enlace" href="favoritos.html">Favoritos</a></li>
+        <li><a class="navegacion__enlace" href="catalogo_XML.html">Catalogo XML</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pagina__contenido">
+    <section class="panel panel--busqueda">
+      <header class="panel__cabecera">
+        <p class="panel__kicker">Buscador</p>
+        <h2 class="panel__titulo">Consulta la enciclopedia de Zelda</h2>
+      </header>
+
+      <form class="formulario-busqueda">
+        <label class="formulario-busqueda__campo">
+          <span class="formulario-busqueda__etiqueta">Buscar por nombre</span>
+
+          <input
+            class="formulario-busqueda__entrada js-busqueda-entrada"
+            type="search"
+            placeholder="Ej: Link, Ocarina, Bokoblin..."
+            autocomplete="off"
+          >
+
+          <ul class="sugerencias js-busqueda-sugerencias"></ul>
+        </label>
+
+        <button class="boton boton--primario" type="submit">Buscar</button>
+      </form>
+
+      <section class="filtros">
+        <ul class="filtros__lista">
+          <li><button class="filtros__boton filtros__boton--activo" data-categoria="games">Juegos</button></li>
+          <li><button class="filtros__boton" data-categoria="characters">Personajes</button></li>
+          <li><button class="filtros__boton" data-categoria="monsters">Monstruos</button></li>
+          <li><button class="filtros__boton" data-categoria="items">Objetos</button></li>
+          <li><button class="filtros__boton" data-categoria="places">Lugares</button></li>
+        </ul>
+      </section>
+    </section>
+
+    <section class="panel panel--resultados">
+      <header class="panel__franja">
+        <div>
+          <p class="panel__kicker">Resultados</p>
+          <h2 class="panel__titulo">Explorador de Hyrule</h2>
+        </div>
+
+        <a class="panel__enlace" href="favoritos.html">Ver favoritos</a>
+      </header>
+
+      <p class="panel__mensaje js-resultados-mensaje" hidden></p>
+
+      <ul class="galeria js-resultados-lista"></ul>
+      <nav class="paginacion js-paginacion"></nav>
+    </section>
+  </main>
+</body>
+</html>
